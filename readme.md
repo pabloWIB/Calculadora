@@ -1,4 +1,4 @@
-<h2 align="center">Figma Design: <a href="[Insert Figma Design Link]">[Project Name] Design</a></h2>
+<h2 align="center">Figma Design: <a href="https://www.figma.com/design/MIbDzhmo2LpaXbFgH7RlDj/iOS-16-Calculator-App-Ui-Design-(Community)?node-id=0-1&p=f&t=lHyp1U9sd6SKW6FV-0">[Project Name] Design</a></h2>
 
 <img src="img/hero.jpg" alt="[Project Name] Hero Image">
 
