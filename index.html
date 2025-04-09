@@ -60,35 +60,67 @@
 
 <body>
 
-	<input class="campoResultado" readonly placeholder="0" id="display">
-	<button class="getNumbers" onclick="appendToDisplay('7')">7</button>
-	<button class="getNumbers" onclick="appendToDisplay('8')">8</button>
-	<button class="getNumbers" onclick="appendToDisplay('9')">9</button>
-	<button class="opBtns" onclick="appendToDisplay('/')">/</button>
-	<button class="getNumbers" onclick="appendToDisplay('4')">4</button>
-	<button class="getNumbers" onclick="appendToDisplay('5')">5</button>
-	<button class="getNumbers" onclick="appendToDisplay('6')">6</button>
-	<button class="opBtns" onclick="appendToDisplay('*')">*</button>
-	<button class="getNumbers" onclick="appendToDisplay('1')">1</button>
-	<button class="getNumbers" onclick="appendToDisplay('2')">2</button>
-	<button class="getNumbers" onclick="appendToDisplay('3')">3</button>
-	<button class="opBtns" id="restar" onclick="appendToDisplay('-')">-</button>
-	<button class="opBtns" onclick="clearDisplay()">C</button>
-	<button class="getNumbers" onclick="appendToDisplay('0')">0</button>
-	<button onclick="appendToDisplay('.')">.</button>
-	<button class="opBtns" onclick="appendToDisplay('+')">+</button>
-	<button onclick="calculate()">=</button>
-	<button class="opBtns" onclick="appendToDisplay('%')">%</button>
-	<button class="opBtns" onclick="borrar()">
-		<img src="img/delete.svg" alt="borrar">
-	</button>
-	<ul id="historial">
+	<section>
+		<spline-viewer url="https://prod.spline.design/DRbMShXS5muXRAeQ/scene.splinecode"></spline-viewer>
+	</section>
 
-	</ul>
+	<aside>
+		<main>
+			<div>
+				<div>
+					<button onclick="limpiarHistorial()">Borrar</button>
+				</div>
+				<div>
+					<ul id="historial">
+					</ul>
+				</div>
+			</div>
+			<div>
+				<div>
+					<input class="campoResultado" readonly placeholder="0" id="display">
+				</div>
+				<div>
+					<div>
+						<button onclick="clearDisplay()">C</button>
+						<button onclick="borrar()">⌫</button>
+						<button onclick="appendToDisplay('%')">%</button>
+						<button onclick="appendToDisplay('/')">/</button>
+					</div>
 
-	<button onclick="limpiarHistorial()">Borrar</button>
+					<div>
+						<button onclick="appendToDisplay('7')">7</button>
+						<button onclick="appendToDisplay('8')">8</button>
+						<button onclick="appendToDisplay('9')">9</button>
+						<button onclick="appendToDisplay('*')">x</button>
+					</div>
+
+					<div>
+						<button onclick="appendToDisplay('4')">4</button>
+						<button onclick="appendToDisplay('5')">5</button>
+						<button onclick="appendToDisplay('6')">6</button>
+						<button id="restar" onclick="appendToDisplay('-')">-</button>
+					</div>
+
+					<div>
+						<button onclick="appendToDisplay('1')">1</button>
+						<button onclick="appendToDisplay('2')">2</button>
+						<button onclick="appendToDisplay('3')">3</button>
+						<button onclick="appendToDisplay('+')">+</button>
+					</div>
+
+					<div>
+						<button style="visibility: hidden;">0</button>
+						<button onclick="appendToDisplay('0')">0</button>
+						<button onclick="appendToDisplay('.')">.</button>
+						<button onclick="calculate()">=</button>
+					</div>
+				</div>
+			</div>
+		</main>
+	</aside>
 
 	<script src="js/script.js"></script>
+	<script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
 </body>
 
 </html>
