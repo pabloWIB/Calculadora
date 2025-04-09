@@ -60,51 +60,33 @@
 
 <body>
 
-	<section class="calculadora">
+	<input class="campoResultado" readonly placeholder="0" id="display">
+	<button class="getNumbers" onclick="appendToDisplay('7')">7</button>
+	<button class="getNumbers" onclick="appendToDisplay('8')">8</button>
+	<button class="getNumbers" onclick="appendToDisplay('9')">9</button>
+	<button class="opBtns" onclick="appendToDisplay('/')">/</button>
+	<button class="getNumbers" onclick="appendToDisplay('4')">4</button>
+	<button class="getNumbers" onclick="appendToDisplay('5')">5</button>
+	<button class="getNumbers" onclick="appendToDisplay('6')">6</button>
+	<button class="opBtns" onclick="appendToDisplay('*')">*</button>
+	<button class="getNumbers" onclick="appendToDisplay('1')">1</button>
+	<button class="getNumbers" onclick="appendToDisplay('2')">2</button>
+	<button class="getNumbers" onclick="appendToDisplay('3')">3</button>
+	<button class="opBtns" id="restar" onclick="appendToDisplay('-')">-</button>
+	<button class="opBtns" onclick="clearDisplay()">C</button>
+	<button class="getNumbers" onclick="appendToDisplay('0')">0</button>
+	<button onclick="appendToDisplay('.')">.</button>
+	<button class="opBtns" onclick="appendToDisplay('+')">+</button>
+	<button onclick="calculate()">=</button>
+	<button class="opBtns" onclick="appendToDisplay('%')">%</button>
+	<button class="opBtns" onclick="borrar()">
+		<img src="img/delete.svg" alt="borrar">
+	</button>
+	<ul id="historial">
 
-		<div>
-			<input class="campoResultado" readonly placeholder="0" id="display">
-		</div>
-		<div class="gridNumbers">
+	</ul>
 
-			<div>
-				<button class="getNumbers" onclick="appendToDisplay('7')">7</button>
-				<button class="getNumbers" onclick="appendToDisplay('8')">8</button>
-				<button class="getNumbers" onclick="appendToDisplay('9')">9</button>
-				<button class="opBtns" onclick="appendToDisplay('/')">/</button>
-			</div>
-
-			<div>
-				<button class="getNumbers" onclick="appendToDisplay('4')">4</button>
-				<button class="getNumbers" onclick="appendToDisplay('5')">5</button>
-				<button class="getNumbers" onclick="appendToDisplay('6')">6</button>
-				<button class="opBtns" onclick="appendToDisplay('*')">*</button>
-			</div>
-
-			<div>
-				<button class="getNumbers" onclick="appendToDisplay('1')">1</button>
-				<button class="getNumbers" onclick="appendToDisplay('2')">2</button>
-				<button class="getNumbers" onclick="appendToDisplay('3')">3</button>
-				<button class="opBtns" onclick="appendToDisplay('-')">-</button>
-			</div>
-			<div>
-				<button class="opBtns" onclick="clearDisplay()">C</button>
-				<button class="getNumbers" onclick="appendToDisplay('0')">0</button>
-				<button onclick="appendToDisplay('.')">.</button>
-				<button class="opBtns" onclick="appendToDisplay('+')">+</button>
-			</div>
-			<div>
-				<button onclick="calculate()">=</button>
-				<button class="opBtns" onclick="appendToDisplay('%')">%</button>
-			</div>
-
-		</div>
-
-	</section>
-
-
-	<div id="historial">
-	</div>
+	<button onclick="limpiarHistorial()">Borrar</button>
 
 	<script src="js/script.js"></script>
 </body>

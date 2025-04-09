@@ -1,4 +1,4 @@
-const display = document.querySelector("#display");
+let display = document.getElementById("display");
 const displayHistorial = document.getElementById("historial");
 
 function appendToDisplay(input) {
@@ -9,13 +9,25 @@ function clearDisplay() {
     display.value = "";
 }
 
+function borrar() {
+    display.value = display.value.slice(0, -1);
+}
+
 function calculate() {
     try {
-        const result = eval(display.value);
+        let arrayValue = display.value;
+        let result = eval(display.value);
         display.value = result;
+        displayHistorial.innerHTML += `<li>${arrayValue} = ${result}</li>`;
+        displayHistorial.innerHTML += `<p>-------------------------------------</p>`;
     } catch {
         display.value = "Error";
     }
+}
+
+
+function limpiarHistorial() {
+    displayHistorial.innerHTML = "";
 }
 
 document.addEventListener('keydown', function (event) {
@@ -23,17 +35,11 @@ document.addEventListener('keydown', function (event) {
 
     if (allowedKeys.includes(event.key)) {
         appendToDisplay(event.key);
-        //  historial
     } else if (event.key === 'Enter') {
         calculate();
-        alert(display.value);
-        // displayHistorial.classList.add("historial");
-        displayHistorial.innerHTML += `<ul>${display.value}</ul>`;
-        //  historial
     } else if (event.key === 'Backspace') {
-        display.value = display.value.slice(0, -1);
+        borrar();
     } else if (event.key === 'Escape') {
         clearDisplay();
     }
 });
-
