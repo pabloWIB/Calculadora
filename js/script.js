@@ -1,15 +1,39 @@
-import './prevents/script.js';
-import './cursor/script.js';
-import './scrolling/script.js';
+const display = document.querySelector("#display");
+const displayHistorial = document.getElementById("historial");
 
+function appendToDisplay(input) {
+    display.value += input;
+}
 
-import './nav/script.js';
-import './header/script.js';
-import './main/script.js'
-import './aside/script.js';
-// import './section/script.js';
-// import './about/script.js';
-import './skills/script.js';
-import './footer/script.js';
+function clearDisplay() {
+    display.value = "";
+}
 
-Splitting();
+function calculate() {
+    try {
+        const result = eval(display.value);
+        display.value = result;
+    } catch {
+        display.value = "Error";
+    }
+}
+
+document.addEventListener('keydown', function (event) {
+    const allowedKeys = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', '*', '/', '.'];
+
+    if (allowedKeys.includes(event.key)) {
+        appendToDisplay(event.key);
+        //  historial
+    } else if (event.key === 'Enter') {
+        calculate();
+        alert(display.value);
+        // displayHistorial.classList.add("historial");
+        displayHistorial.innerHTML += `<ul>${display.value}</ul>`;
+        //  historial
+    } else if (event.key === 'Backspace') {
+        display.value = display.value.slice(0, -1);
+    } else if (event.key === 'Escape') {
+        clearDisplay();
+    }
+});
+

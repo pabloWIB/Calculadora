@@ -1,51 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8"/>
-	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
-	
-	<!-- Canonical URL -->
-	<link rel="canonical" href="https://www.yourwebsite.com" />
-	
-	<!-- Keywords -->
-	<meta name="keywords" content="project, web development, front-end, tech, design, JavaScript, CSS, HTML">
-	
-	<!-- Alternate Language URL -->
-	<link rel="alternate" hreflang="es" href="https://www.yourwebsite.com/es/" />
-	
-	<!-- Viewport for responsive design -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	
-	<!-- Description for search engines -->
-	<meta name="description" content="A brief description of your project that summarizes what it does and why it's valuable.">
 
-	<!-- Open Graph Meta Tags -->
-	<meta property="og:title" content="Your Project Title | Your Project Name"/>
-   	<meta property="og:description" content="Detailed description of what your project is about, highlighting key features and benefits."/>
-  	<meta property="og:image" href="https://www.yourwebsite.com/img/your-image.jpg"/>
+<head>
+	<meta charset="UTF-8" />
+	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+	<link rel="canonical" href="https://www.yourwebsite.com" />
+	<meta name="keywords" content="project, web development, front-end, tech, design, JavaScript, CSS, HTML">
+	<link rel="alternate" hreflang="es" href="https://www.yourwebsite.com/es/" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description"
+		content="A brief description of your project that summarizes what it does and why it's valuable.">
+	<meta property="og:title" content="Your Project Title | Your Project Name" />
+	<meta property="og:description"
+		content="Detailed description of what your project is about, highlighting key features and benefits." />
+	<meta property="og:image" href="https://www.yourwebsite.com/img/your-image.jpg" />
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="630" />
-	<meta property="og:image:type" content="image/jpg"/>
-	<meta property="og:type" content="website"/>
-	<meta property="og:site_name" content="Your Website Name"/>
-	<meta property="og:locale" content="en_US"/>
-
-	<!-- Favicon Icons -->
+	<meta property="og:image:type" content="image/jpg" />
+	<meta property="og:type" content="website" />
+	<meta property="og:site_name" content="Your Website Name" />
+	<meta property="og:locale" content="en_US" />
 	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
 	<link rel="icon" type="image/png" sizes="192x192" href="img/favicon/android-icon-192x192.png">
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="msapplication-TileImage" href="img/favicon/ms-icon-144x144.png">
 	<meta name="theme-color" content="#ffffff">
-
-	<!-- Twitter Cards Meta Tags -->
-	<meta name="twitter:title" content="Your Project Title"/>
-	<meta name="twitter:description" content="A short description for Twitter sharing about your project."/>
-	<meta name="twitter:image" content="https://www.yourwebsite.com/img/your-image.jpg"/>
+	<meta name="twitter:title" content="Your Project Title" />
+	<meta name="twitter:description" content="A short description for Twitter sharing about your project." />
+	<meta name="twitter:image" content="https://www.yourwebsite.com/img/your-image.jpg" />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:label1" content="Est. reading time" />
 	<meta name="twitter:data1" content="3 minutes" />
-
-	<!-- Structured Data (JSON-LD) for Search Engines -->
 	<script type="application/ld+json">
 		{
 			"@context": "https://schema.org",
@@ -69,15 +54,59 @@
 		}
 	</script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-	<link rel="stylesheet" href="css/styles.css"/>
-	<title>Your Project Title | Your Project Name</title>
+	<link rel="stylesheet" href="css/styles.css" />
+	<title>App Calculatdora</title>
 </head>
+
 <body>
 
+	<section class="calculadora">
 
-	<div class="cursor"></div>
-	
-	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-	<script type="module" src="js/script.js"></script>
+		<div>
+			<input class="campoResultado" readonly placeholder="0" id="display">
+		</div>
+		<div class="gridNumbers">
+
+			<div>
+				<button class="getNumbers" onclick="appendToDisplay('7')">7</button>
+				<button class="getNumbers" onclick="appendToDisplay('8')">8</button>
+				<button class="getNumbers" onclick="appendToDisplay('9')">9</button>
+				<button class="opBtns" onclick="appendToDisplay('/')">/</button>
+			</div>
+
+			<div>
+				<button class="getNumbers" onclick="appendToDisplay('4')">4</button>
+				<button class="getNumbers" onclick="appendToDisplay('5')">5</button>
+				<button class="getNumbers" onclick="appendToDisplay('6')">6</button>
+				<button class="opBtns" onclick="appendToDisplay('*')">*</button>
+			</div>
+
+			<div>
+				<button class="getNumbers" onclick="appendToDisplay('1')">1</button>
+				<button class="getNumbers" onclick="appendToDisplay('2')">2</button>
+				<button class="getNumbers" onclick="appendToDisplay('3')">3</button>
+				<button class="opBtns" onclick="appendToDisplay('-')">-</button>
+			</div>
+			<div>
+				<button class="opBtns" onclick="clearDisplay()">C</button>
+				<button class="getNumbers" onclick="appendToDisplay('0')">0</button>
+				<button onclick="appendToDisplay('.')">.</button>
+				<button class="opBtns" onclick="appendToDisplay('+')">+</button>
+			</div>
+			<div>
+				<button onclick="calculate()">=</button>
+				<button class="opBtns" onclick="appendToDisplay('%')">%</button>
+			</div>
+
+		</div>
+
+	</section>
+
+
+	<div id="historial">
+	</div>
+
+	<script src="js/script.js"></script>
 </body>
+
 </html>
