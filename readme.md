@@ -1,1 +1,1 @@
-<h2 align="center">Figma Design: <a href="https://www.figma.com/design/MIbDzhmo2LpaXbFgH7RlDj/iOS-16-Calculator-App-Ui-Design-(Community)?node-id=0-1&p=f&t=lHyp1U9sd6SKW6FV-0">Calculadora</a></h2> <img src="img/hero.png" alt="Calculadora Hero Image"> <h2 align="center">Project: <a href="https://calculadora-steel-six.vercel.app">Calculadora</a></h2> 
+<img src="img/hero.png" alt="Calculadora Hero Image"> <h2 align="center">Project: <a href="https://calculadora-steel-six.vercel.app">Calculadora</a></h2> 
